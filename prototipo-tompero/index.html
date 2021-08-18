@@ -1,0 +1,480 @@
+<!-- Projeto FoodBox da Driven Education por Vinicius Branco, Osasco-SP.
+
+  Para este projeto, estou usando a empresa Tompero Burger Oz,
+  que opera no mercado de entrega de alimentos em Osasco-SP, como empresa modelo.
+
+  Aqui constam alguns dos produtos oferecidos pela empresa e os valores são fictícios.
+
+  Qualquer dúvida, sugestão ou crítica, contate-me:
+  viniciusbrancos@gmail.com
+
+  LinkedIn: https://www.linkedin.com/in/vinicius-branco/
+
+  Outros projetos:
+  https://github.com/ViniciusBranco/
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tompero Burger Oz</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="img/favicon.png" />
+
+    <!-- CSS -->
+    <style>
+      body {
+        background: #e5e5e5;
+        font-family: "Roboto";
+      }
+
+      .topo {
+        background: #cf2b2b;
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0 #bbbbbb;
+      }
+
+      .produto {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0 0 10px 0 #bbbbbb;
+        cursor: pointer;
+        border: 5px solid white;
+      }
+
+      h1 {
+        margin: 0;
+        font-family: "Righteous";
+        font-weight: normal;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: normal;
+      }
+
+      h3 {
+        font-size: 30px;
+        margin-bottom: 15px;
+        font-family: "Righteous";
+        font-weight: normal;
+      }
+
+      h4 {
+        margin-top: 0;
+        margin-bottom: 5px;
+        font-size: 20px;
+      }
+
+      img {
+        width: 100px;
+        border-radius: 5px;
+        float: right;
+        margin-left: 15px;
+      }
+
+      .logo {
+        width: 100px;
+        border-radius: 5px;
+        float: left;
+        margin-right: 15px;
+      }
+
+      p {
+        margin: 15px 0 0 0;
+      }
+
+      .preco {
+        font-weight: bold;
+        font-size: 18px;
+        float: left;
+      }
+
+      .qtd {
+        margin-top: 15px;
+        float: right;
+      }
+
+      .qtdbox {
+        width: 30px;
+      }
+
+      .botao {
+        background: #0b940b;
+        text-align: center;
+        padding: 15px;
+        margin-top: 30px;
+        margin-bottom: 100px;
+        border-radius: 50px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="topo">
+      <img class="logo" src="img/logo.png" />
+      <h1>Tompero Burger Oz</h1>
+      <h2>Lanches e Refeições Veganos</h2>
+      <h2>Quarta a domingo das 17h às 22h.</h2>
+      <h2>Osasco - SP</h2>
+    </div>
+
+    <h3>Hamburgueres</h3>
+    <div id="QuaseQueijo" class="produto" onclick="escolherQuaseQueijo()">
+      <img src="img/quasequeijo.png" />
+      <h4>Quase Queijo</h4>
+      <p>
+        Burger a sua escolha + queijo vegano! Nossos hambúrgueres são feitos de
+        forma totalmente caseira!
+      </p>
+      <div style="width: 100%; overflow: hidden;">
+        <div>
+          <p class="preco">R$ 14,90</p>
+        </div>
+        <div class="qtd">
+          Qtd:
+          <input
+            class="qtdbox"
+            type="text"
+            id="qtdQuaseQueijo"
+            name="qtdQuaseQueijo"
+            value="0"
+            maxlength="2"
+            oninput="escolherQuaseQueijo(this.value)"
+          />
+        </div>
+      </div>
+    </div>
+    <div id="LeSalade" class="produto" onclick="escolherLeSalade()">
+      <img src="img/lesalade.png" />
+      <h4>Le Salade</h4>
+      <p>
+        Burger a sua escolha + queijo vegano (caseiro), alface e tomate. Nossos
+        hambúrgueres são feitos de forma totalmente caseira!
+      </p>
+      <div style="width: 100%; overflow: hidden;">
+        <div>
+          <p class="preco">R$ 19,90</p>
+        </div>
+        <div class="qtd">
+          Qtd:
+          <input
+            class="qtdbox"
+            type="text"
+            id="qtdLeSalade"
+            name="qtdLeSalade"
+            value="0"
+            maxlength="2"
+            oninput="escolherLeSalade(this.value)"
+          />
+        </div>
+      </div>
+    </div>
+
+    <h3>Acompanhamentos</h3>
+    <div id="Nachos" class="produto" onclick="escolherNachos()">
+      <img src="img/chillivegnachos.png" />
+      <h4>Nachos</h4>
+      <p>
+        Chilli vegano com Nachos caseiros!
+      </p>
+      <div style="width: 100%; overflow: hidden;">
+        <div>
+          <p class="preco">R$ 9,90</p>
+        </div>
+        <div class="qtd">
+          Qtd:
+          <input
+            class="qtdbox"
+            type="text"
+            id="qtdNachos"
+            name="qtdNachos"
+            value="0"
+            maxlength="2"
+            oninput="escolherNachos(this.value)"
+          />
+        </div>
+      </div>
+    </div>
+    <div id="CoxShimeji" class="produto" onclick="escolherCoxShimeji()">
+      <img src="img/coxinhashimeji.png" />
+      <h4>Bolinho de Shimeji</h4>
+      <p>Por este você não esperava!</p>
+      <div style="width: 100%; overflow: hidden;">
+        <div>
+          <p class="preco">R$ 14,90</p>
+        </div>
+        <div class="qtd">
+          Qtd:
+          <input
+            class="qtdbox"
+            type="text"
+            id="qtdCoxShimeji"
+            name="qtdCoxShimeji"
+            value="0"
+            maxlength="2"
+            oninput="escolherCoxShimeji(this.value)"
+          />
+        </div>
+      </div>
+    </div>
+
+    <h3>Bebidas</h3>
+    <div id="Coca" class="produto" onclick="escolherCoca()">
+      <img src="img/coca.jpg" />
+      <h4>Coca-Cola gelada</h4>
+      <p>Normal, zero ou stevia. Vai na sorte.</p>
+      <div style="width: 100%; overflow: hidden;">
+        <div>
+          <p class="preco">R$ 5,90</p>
+        </div>
+        <div class="qtd">
+          Qtd:
+          <input
+            class="qtdbox"
+            type="text"
+            id="qtdCoca"
+            name="qtdCoca"
+            value="0"
+            maxlength="2"
+            oninput="escolherCoca(this.value)"
+          />
+        </div>
+      </div>
+    </div>
+    <div id="Refresco" class="produto" onclick="escolherRefresco()">
+      <img src="img/refresco.jpg" />
+      <h4>Refresco</h4>
+      <p>Podia ser suco, mas leva água.</p>
+      <div style="width: 100%; overflow: hidden;">
+        <div>
+          <p class="preco">R$ 3,90</p>
+        </div>
+        <div class="qtd">
+          Qtd:
+          <input
+            class="qtdbox"
+            type="text"
+            id="qtdRefresco"
+            name="qtdRefresco"
+            value="0"
+            maxlength="2"
+            oninput="escolherRefresco(this.value)"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="botao" onclick="finalizarPedido()">
+      Finalizar pedido
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      // Inicializacao de variaveis de acompanhamento
+      // Categorias
+      let hamburguer;
+      let acompanhamento;
+      let bebida;
+      // Quantidades iniciais
+      let qtdHamburguer = 0;
+      let qtdAcompanhamento = 0;
+      let qtdBebida = 0;
+      // Precos iniciais
+      let precoHamburguer = 0;
+      let precoAcompanhamento = 0;
+      let precoBebida = 0;
+      // Variaveis de preco para teste rapido do valor total
+      // let precoQuaseQueijo = 2;
+      // let precoLeSalade = 2;
+      // let precoCoxShimeji = 2;
+      // let precoNachos = 2;
+      // let precoCoca = 2;
+      // let precoRefresco = 2;
+      // Variaveis de precos tais como informados
+      let precoQuaseQueijo = 14.9;
+      let precoLeSalade = 14.9;
+      let precoCoxShimeji = 14.9;
+      let precoNachos = 9.9;
+      let precoCoca = 5.9;
+      let precoRefresco = 3.9;
+
+      // Selecao de hamburgueres
+      function escolherQuaseQueijo(val) {
+        if (val == null) {
+          // se val = null, qtd = 0 pq val = value = "0"
+          val = 0;
+        }
+        hamburguer = "Quase Queijo"; // configura produto selecionado
+        document.getElementById("QuaseQueijo").style.borderColor = "green";
+        document.getElementById("LeSalade").style.borderColor = "white";
+        document.getElementById("qtdLeSalade").value = 0;
+        qtdHamburguer = val; // salva quantidade desta caregoria
+        precoHamburguer = qtdHamburguer * precoQuaseQueijo; // calcula preco desta caregoria
+      }
+      function escolherLeSalade(val) {
+        if (val == null) {
+          val = 0; // se val = null, qtd = 0 pq val = value = "0"
+        }
+        hamburguer = "Le Salade"; // configura produto selecionado
+        document.getElementById("LeSalade").style.borderColor = "green";
+        document.getElementById("QuaseQueijo").style.borderColor = "white";
+        document.getElementById("qtdQuaseQueijo").value = 0;
+        qtdHamburguer = val; // salva quantidade desta caregoria
+        precoHamburguer = qtdHamburguer * precoLeSalade; // calcula preco desta caregoria
+      }
+
+      // Selecao de acompanhamentos
+      function escolherCoxShimeji(val) {
+        if (val == null) {
+          val = 0; // se val = null, qtd = 0 pq val = value = "0"
+        }
+        acompanhamento = "Bolinho de Shimeji"; // configura produto selecionado
+        document.getElementById("CoxShimeji").style.borderColor = "green";
+        document.getElementById("Nachos").style.borderColor = "white";
+        document.getElementById("qtdNachos").value = 0;
+        qtdAcompanhamento = val; // salva quantidade desta caregoria
+        precoAcompanhamento = qtdAcompanhamento * precoCoxShimeji; // calcula preco desta caregoria
+      }
+      function escolherNachos(val) {
+        if (val == null) {
+          val = 0; // se val = null, qtd = 0 pq val = value = "0"
+        }
+        acompanhamento = "Nachos"; // configura produto selecionado
+        document.getElementById("Nachos").style.borderColor = "green";
+        document.getElementById("CoxShimeji").style.borderColor = "white";
+        document.getElementById("qtdCoxShimeji").value = 0;
+        qtdAcompanhamento = val; // salva quantidade desta caregoria
+        precoAcompanhamento = qtdAcompanhamento * precoNachos; // calcula preco desta caregoria
+      }
+
+      // Selecao de bebidas
+      function escolherCoca(val) {
+        if (val == null) {
+          val = 0; // se val = null, qtd = 0 pq val = value = "0"
+        }
+        bebida = "Coca-Cola"; // configura produto selecionado
+        document.getElementById("Coca").style.borderColor = "green";
+        document.getElementById("Refresco").style.borderColor = "white";
+        document.getElementById("qtdRefresco").value = 0;
+        qtdBebida = val; // salva quantidade desta caregoria
+        precoBebida = qtdBebida * precoCoca; // calcula preco desta caregoria
+      }
+      function escolherRefresco(val) {
+        if (val == null) {
+          val = 0; // se val = null, qtd = 0 pq val = value = "0"
+        }
+        bebida = "Refresco"; // configura produto selecionado
+        document.getElementById("Refresco").style.borderColor = "green";
+        document.getElementById("Coca").style.borderColor = "white";
+        document.getElementById("qtdCoca").value = 0;
+        qtdBebida = val; // salva quantidade desta caregoria
+        precoBebida = qtdBebida * precoRefresco; // calcula preco desta caregoria
+      }
+
+      // verifica se alguma categoria nao foi selecionada.
+      // Se determina categoria nao tiver sido selecionada,
+      // ou seja, quantidade = 0, da nome generico para a qual nao foi selecionada.
+      if (qtdHamburguer == 0) {
+        hamburguer = "hamburguer";
+      }
+      if (qtdAcompanhamento == 0) {
+        acompanhamento = "acompanhamento";
+      }
+      if (qtdBebida == 0) {
+        bebida = "bebida";
+      }
+
+      // finalizacao do pedido
+      function finalizarPedido() {
+        // - Pegar produtos escolhidos OK
+        // - Montar frase com o pedido OK
+        // - Integrar com o WhatsApp OK
+
+        // Determina preco final
+        precoTotal = precoHamburguer + precoAcompanhamento + precoBebida;
+
+        // Verifica se nenhum produto foi selecionado.
+        // se verdade, volta pra pagina.
+        // se falso, continua com a finalizacao do pedido
+        if (
+          (qtdHamburguer == 0) &
+          (qtdAcompanhamento == 0) &
+          (qtdBebida == 0)
+        ) {
+          alert(
+            "Você não selecionou nenhum produto =( vai nem um refresco?! ^^'"
+          );
+        } else {
+          // prepara mensagem com pedido para envio
+          let mensagem;
+          mensagemCliente =
+            "Você escolheu: " +
+            qtdHamburguer +
+            " " +
+            hamburguer +
+            ", " +
+            qtdAcompanhamento +
+            " " +
+            acompanhamento +
+            " e " +
+            qtdBebida +
+            " " +
+            bebida +
+            ". Total do pedido: R$ " +
+            precoTotal.toFixed(2) +
+            ". Clique em 'Ok' para confirmar! \n\n Obs: seu pedido será redirecionado via WhatsApp para o restaurante!";
+
+          // Popup de confirmacao de envio do pedido.
+          // se verdade, ou seja, usuario clicou em ok, envia.
+          // se falso, ou seja, usuario clicou em cancelar, faz nada.
+          if (confirm(mensagemCliente)) {
+            mensagemRestaurante =
+              "Olá, eu gostaria de fazer um pedido: " +
+              +qtdHamburguer +
+              " " +
+              hamburguer +
+              ", " +
+              qtdAcompanhamento +
+              " " +
+              acompanhamento +
+              " e " +
+              qtdBebida +
+              " " +
+              bebida +
+              ".";
+            // window.location.href =
+            //   "http://api.whatsapp.com/send?1=pt_BR&phone=5511999999999&text=" +
+            //   mensagemRestaurante;
+            window.open(
+              "http://api.whatsapp.com/send?1=pt_BR&phone=5511999999999&text=" +
+                mensagemRestaurante
+            );
+            // Qual a diferença entre window location.href e open, alem de abrir um anova aba?
+          } else {
+            alert("Certo! Seu pedido não foi enviado.");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
